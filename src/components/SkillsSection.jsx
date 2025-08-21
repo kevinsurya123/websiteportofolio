@@ -3,34 +3,35 @@ import { cn } from "../lib/utils";
 
 
 const skills = [
-    {name: "SQL", level: 80, category: "systemanalyst"},
-    {name: "System Modeling & Design", level: 80, category: "systemanalyst"},
-    {name: "SDLC Knowledge", level: 90, category: "systemanalyst"},
-    {name: "System Architecture", level: 75, category: "systemanalyst"},
-    {name: "ERP Tools", level: 80, category: "systemanalyst"},
-    {name: "Power BI", level: 80, category: "systemanalyst"},
-    {name: "Requirement Analysis", level: 90, category: "systemanalyst"},
-    {name: "Critical Thinking", level: 85, category: "systemanalyst"},
-    {name: "Problem Solving", level: 85, category: "systemanalyst"},
-    {name: "Business Process Analysis", level: 80, category: "systemanalyst"},
-    {name: "Communication", level: 90, category: "systemanalyst"},
-    {name: "Facilitation & Negotiation", level: 80, category: "systemanalyst"},
-    {name: "Technical Documentation", level : 90, category : "systemanalyst"},
-
+{name: "SQL", level: 80, category: "Technical Skills"},
+{name: "SDLC Knowledge", level: 90, category: "Technical Skills"},
+{name: "System Architecture", level: 75, category: "Technical Skills"},
+{name: "ERP Tools", level: 80, category: "Technical Skills"},
+{name: "Power BI", level: 80, category: "Technical Skills"},
+{name: "Technical Documentation", level: 90, category: "Technical Skills"},
+{name: "PHP", level: 75, category: "Technical Skills"},
+{name: "React", level: 75, category: "Technical Skills"},
+{name: "Java Script", level: 75, category: "Technical Skills"},
     
-    { name: "Stakeholder Management", level: 90, category: "businessanalyst" },
-    { name: "Business Acumen", level: 95, category: "businessanalyst" },
-    { name: "Business Case Development", level: 85, category: "businessanalyst" },
-    { name: "Data Visualization", level: 80, category: "businessanalyst" },
+{name: "System Modeling & Design", level: 80, category: "Analytical Skills"},
+{name: "Requirement Analysis", level: 90, category: "Analytical Skills"},
+{name: "Critical Thinking", level: 85, category: "Analytical Skills"},
+{name: "Problem Solving", level: 85, category: "Analytical Skills"},
+{name: "Business Process Analysis", level: 80, category: "Analytical Skills"},
+{name: "Business Acumen", level: 95, category: "Analytical Skills"},
+{name: "Business Case Development", level: 85, category: "Analytical Skills"},
+{name: "Data Visualization", level: 80, category: "Analytical Skills"},
+{name: "Market Analysis", level: 85, category: "Analytical Skills"},
+{name: "Strategic Planning", level: 90, category: "Analytical Skills"},
 
-
-    { name: "Market Analysis", level: 85, category: "businessdevelopment" },
-    { name: "Strategic Planning", level: 90, category: "businessdevelopment" },
-    { name: "Relationship Management", level: 95, category: "businessdevelopment" }
+{name: "Communication", level: 90, category: "Soft Skills"},
+{name: "Facilitation & Negotiation", level: 95, category: "Soft Skills"},
+{name: "Stakeholder Management", level: 90, category: "Soft Skills"},
+{name: "Relationship Management", level: 95, category: "Soft Skills"}
 ];
 
 
-const categories = ["all", "systemanalyst", "businessanalyst", "businessdevelopment" ];
+const categories = ["all", "Technical Skills", "Analytical Skills", "Soft Skills"];
 
 export const SkillsSection = () => {
     const [activeCategory, setActiveCategory] = useState("all")

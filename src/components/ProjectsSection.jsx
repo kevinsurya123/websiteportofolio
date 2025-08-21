@@ -49,7 +49,7 @@ const project = [
       "Communication",
       "Facilitation & Negotiation",
     ],
-    demoUrl: "https://www.instagram.com/ifun_official/",
+    demoUrl: "https://drive.google.com/file/d/1T37WS-DQz-3W9hIgtT4HsXFPKy48vNaZ/view?usp=sharing",
     githubUrl: "#",
   },
 ];

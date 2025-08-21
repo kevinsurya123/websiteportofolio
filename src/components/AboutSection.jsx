@@ -14,22 +14,21 @@ export const AboutSection = () => {
                     <h3 className="text-2xl font-semibold">Passionate System Analyst & Business Development</h3>
 
                     <p className="text-muted-foreground"> 
-                       As an Information Systems graduate, I have hands-on experience in both technical and business roles. 
-                       I have supported an Odoo ERP migration , developed a web-based POS system using PHP , and executed user acquisition and CRM strategies that contributed to a team revenue of approximately $4,000/month. 
-                       This is complemented by proven leadership skills from heading an E-Sports community of over 400 members
+                       I’m an Information Systems graduate with a strong foundation in both technical development and business strategy. My experience includes leading an Odoo ERP migration, building a web-based POS system using PHP, and driving user acquisition and CRM initiatives that generated over $4,000 in monthly team revenue.
                     </p>
 
                     <p className="text-muted-foreground"> 
-                       I am a proactive problem-solver, passionate about bridging the gap between technical solutions and business growth. 
-                       This drive is demonstrated through my project work, achievements in business plan competitions , and my commitment to building an engaged E-Sports community. 
-                       I am eager to apply my unique blend of technical and business acumen to create impactful results.
+                       Beyond technical execution, I’ve demonstrated leadership by managing an E-Sports community of 400+ members and participating in business plan competitions that sharpened my strategic thinking.
+                    </p>
+                    <p className="text-muted-foreground"> 
+                       I thrive at the intersection of technology and business translating complex systems into practical solutions that fuel growth. I'm excited to bring this hybrid skill set to impactful projects and collaborative teams.
                     </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
                     <a href="#contact" className="cosmic-button">
                         {""}
                         Get In Touch
                     </a>
-                    <a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
+                    <a href="https://drive.google.com/file/d/1LSJOKFraNrmxIf3m-hOpq9fJMfH6eHg5/view?usp=sharing" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300" target="_blank">
                         Download CV
                     </a>
                 </div>

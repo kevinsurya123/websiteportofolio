@@ -37,12 +37,18 @@ export const Navbar = () => {
                 <a
                     className="text-xl font-bold text-primary flex items-center"
                     href="#hero"
-                >
-                    <span className="relative z-10">
-                        <span className="text-glow text-foreground"> Kevin Surya</span>{" "}
-                        Portofolio
+                    >
+                    <span className="relative z-10 flex items-center gap-2">
+                        <span className="text-glow text-foreground">Kevin Surya</span>
+
+                        {/* Animasi Portofolio */}
+                        <span className="animated-text animate-color">
+                        P<span className="jump-o">o</span>rtofolio
+                        </span>
                     </span>
-                </a>
+                    </a>
+
+
 
                 {/* Desktop nav */}
                 <div className="hidden md:flex space-x-8">

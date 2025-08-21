@@ -19,7 +19,7 @@ export const ContactSection = () => {
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach out.
-            i'm always open to discussing new opportunities.
+            I'm always open to discussing new opportunities.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -64,7 +64,7 @@ export const ContactSection = () => {
                                 Location
                             </h4>
                             <a className="text-muted-foreground hover:text-primary transition-colors">
-                                Yogyakarta, Tanggerang Selatan.
+                                Yogyakarta, Tangerang Selatan.
                             </a>
                         </div>
                     </div>
@@ -114,7 +114,7 @@ export const ContactSection = () => {
                             />
                     </div>
                     <div>
-                        <label htmlFor="message" className="block text-sm font-medium mb-2"> Your Massage</label>
+                        <label htmlFor="message" className="block text-sm font-medium mb-2"> Your Message</label>
                         <textarea 
                             id="message" 
                             name="message" 
