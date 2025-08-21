@@ -22,7 +22,7 @@ export const HeroSection = () => {
                             <span className="text-foreground ml-2 opacity-0 animate-fade-in-delay-2">Surya</span>
                         </h1>
 
-                        <p className="text-lg md:text-xl text-muted-foreground opacity-0 animate-fade-in-delay-3">
+                        <p className="text-lg md:text-xl text-muted-foreground opacity-0 animate-fade-in-delay-3 md:text-justify">
                             An Information Systems graduate from Universitas Atma Jaya Yogyakarta with a 3.55 GPA, offering a unique 
                             blend of technical and business acumen. Experienced in ERP systems like Odoo and web development using 
                             PHP and React JS, complemented by hands-on experience in user acquisition and customer relationship management. A 
