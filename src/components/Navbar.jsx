@@ -1,7 +1,10 @@
+// components/Navbar.jsx
+
 import { href } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle"; // 1. IMPORT ThemeToggle
 
 const navItems = [
     { name: "Home", href: "#hero" },
@@ -17,7 +20,6 @@ export const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Perubahan ada di baris ini
             setIsScrolled(window.scrollY > 10);
         };
         window.addEventListener("scroll", handleScroll);
@@ -37,21 +39,17 @@ export const Navbar = () => {
                 <a
                     className="text-xl font-bold text-primary flex items-center"
                     href="#hero"
-                    >
+                >
                     <span className="relative z-10 flex items-center gap-2">
                         <span className="text-glow text-foreground">Kevin Surya</span>
-
-                        {/* Animasi Portofolio */}
-                        <span className="animated-text animate-color">
-                        P<span className="jump-o">o</span>rtofolio
+                        <span className="animated-text">
+                            P<span className="jump-o">o</span>rtofolio
                         </span>
                     </span>
-                    </a>
-
-
+                </a>
 
                 {/* Desktop nav */}
-                <div className="hidden md:flex space-x-8">
+                <div className="hidden md:flex items-center space-x-8">
                     {navItems.map((item, key) => (
                         <a
                             key={key}
@@ -61,16 +59,22 @@ export const Navbar = () => {
                             {item.name}
                         </a>
                     ))}
+                    <ThemeToggle /> {/* 2. TAMBAHKAN DI SINI UNTUK DESKTOP */}
                 </div>
 
-                {/* Mobile nav */}
-                <button
-                    onClick={() => setIsMenuOpen((prev) => !prev)}
-                    className="md:hidden p-2 text-foreground z-50"
-                    aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-                >
-                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                {/* Mobile nav buttons wrapper */}
+                <div className="flex items-center gap-2 md:hidden">
+                    <ThemeToggle /> {/* 3. TAMBAHKAN DI SINI UNTUK MOBILE */}
+                    <button
+                        onClick={() => setIsMenuOpen((prev) => !prev)}
+                        className="p-2 text-foreground z-50"
+                        aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+                    >
+                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
+
+                {/* Mobile menu (pop-up) */}
                 <div
                     className={cn(
                         "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",

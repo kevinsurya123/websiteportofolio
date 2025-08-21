@@ -4,7 +4,8 @@ export const HeroSection = () => {
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex items-center justify-center px-4"
+            // FIX 1: Tambahkan padding-top (pt-24) untuk memberi ruang bagi navbar
+            className="relative min-h-screen flex items-center justify-center px-4 pt-24"
         >
             <div className="container mx-auto">
                 {/* Wrapper untuk 2 kolom (teks dan gambar) */}
@@ -21,7 +22,7 @@ export const HeroSection = () => {
                             <span className="text-foreground ml-2 opacity-0 animate-fade-in-delay-2">Surya</span>
                         </h1>
 
-                        <p className="text-lg md:text-xl text-muted-foreground opacity-0 animate-fade-in-delay-3 md:text-justify">
+                        <p className="text-lg md:text-xl text-muted-foreground opacity-0 animate-fade-in-delay-3">
                             An Information Systems graduate from Universitas Atma Jaya Yogyakarta with a 3.55 GPA, offering a unique 
                             blend of technical and business acumen. Experienced in ERP systems like Odoo and web development using 
                             PHP and React JS, complemented by hands-on experience in user acquisition and customer relationship management. A 
@@ -47,7 +48,8 @@ export const HeroSection = () => {
                 </div>
             </div>
 
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+            {/* FIX 2: Sembunyikan di mobile (hidden), tampilkan di desktop (md:flex) */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex-col items-center animate-bounce hidden md:flex">
                 <span className="text-sm text-muted-foreground mb-2 font-bold"> Scroll </span>
                 <ArrowDown className="h-5 w-5 text-primary" />
             </div>
