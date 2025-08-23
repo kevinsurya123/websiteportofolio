@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Instagram, Github, Linkedin } from "lucide-react";
 
 export const HeroSection = () => {
     return (
@@ -29,9 +29,20 @@ export const HeroSection = () => {
                             proactive problem-solver ready to bridge the gap between technical solutions and business growth.
                         </p>
 
-                        <div className="pt-4 opacity-0 animate-fade-in-delay-4">
+                        <div className="pt-4 opacity-0 animate-fade-in-delay-4 flex items-center gap-4">
                             <a href="#projects" className="cosmic-button">
                                 View My Work
+                            </a>
+                            
+                            {/* Ikon sosial media */}
+                            <a href="https://www.linkedin.com/in/kevinsurya12/" target="_blank">
+                                <Linkedin />
+                            </a>
+                            <a href="https://www.instagram.com/sury.rya/" target="_blank">
+                                <Instagram />
+                            </a>
+                            <a href="https://github.com/kevinsurya123" target="_blank">
+                                <Github />
                             </a>
                         </div>
                     </div>
