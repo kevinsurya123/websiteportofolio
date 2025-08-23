@@ -4,7 +4,7 @@ import { href } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle"; // 1. IMPORT ThemeToggle
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
     { name: "Home", href: "#hero" },
@@ -27,77 +27,81 @@ export const Navbar = () => {
     }, []);
 
     return (
-        <nav
-            className={cn(
-                "fixed w-full z-40 transition-all duration-300",
-                isScrolled
-                    ? "py-3 bg-background/80 backdrop-blur-md shadow-xs"
-                    : "py-5"
-            )}
-        >
-            <div className="container flex items-center justify-between">
-                <a
-                    className="text-xl font-bold text-primary flex items-center"
-                    href="#hero"
-                >
-                    <span className="relative z-10 flex items-center gap-2">
-                        <span className="text-glow text-foreground">Kevin Surya</span>
-                        <span className="animated-text">
-                            P<span className="jump-o">o</span>rtofolio
-                        </span>
-                    </span>
-                </a>
-
-                {/* Desktop nav */}
-                <div className="hidden md:flex items-center space-x-8">
-                    {navItems.map((item, key) => (
-                        <a
-                            key={key}
-                            href={item.href}
-                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                        >
-                            {item.name}
-                        </a>
-                    ))}
-                    <ThemeToggle /> {/* 2. TAMBAHKAN DI SINI UNTUK DESKTOP */}
-                </div>
-
-                {/* Mobile nav buttons wrapper */}
-                <div className="flex items-center gap-2 md:hidden">
-                    <ThemeToggle /> {/* 3. TAMBAHKAN DI SINI UNTUK MOBILE */}
-                    <button
-                        onClick={() => setIsMenuOpen((prev) => !prev)}
-                        className="p-2 text-foreground z-50"
-                        aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+        <>
+            <nav
+                className={cn(
+                    // UBAH z-40 MENJADI z-50 DI SINI
+                    "fixed w-full z-50 transition-all duration-300", 
+                    isScrolled
+                        ? "py-3 bg-background/80 backdrop-blur-md shadow-xs"
+                        : "py-5"
+                )}
+            >
+                <div className="container flex items-center justify-between">
+                    <a
+                        className="text-xl font-bold text-primary flex items-center"
+                        href="#hero"
                     >
-                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
+                        <span className="relative z-10 flex items-center gap-2">
+                            <span className="text-glow text-foreground">Kevin Surya</span>
+                            <span className="animated-text">
+                                P<span className="jump-o">o</span>rtofolio
+                            </span>
+                        </span>
+                    </a>
 
-                {/* Mobile menu (pop-up) */}
-                <div
-                    className={cn(
-                        "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
-                        "transition-all duration-300 md:hidden",
-                        isMenuOpen
-                            ? "opacity-100 pointer-events-auto"
-                            : "opacity-0 pointer-events-none"
-                    )}
-                >
-                    <div className="flex flex-col space-y-8 text-xl">
+                    {/* Desktop nav */}
+                    <div className="hidden md:flex items-center space-x-8">
                         {navItems.map((item, key) => (
                             <a
                                 key={key}
                                 href={item.href}
                                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.name}
                             </a>
                         ))}
+                        <ThemeToggle />
+                    </div>
+
+                    {/* Mobile nav buttons wrapper */}
+                    <div className="flex items-center gap-2 md:hidden">
+                        <ThemeToggle />
+                        <button
+                            onClick={() => setIsMenuOpen((prev) => !prev)}
+                            // Pastikan z-index pada tombol juga tinggi (z-50 sudah oke)
+                            className="p-2 text-foreground z-50" 
+                            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+                        >
+                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
                     </div>
                 </div>
+            </nav>
+
+            {/* Mobile menu (pop-up) - z-index tetap z-40 */}
+            <div
+                className={cn(
+                    "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
+                    "transition-all duration-300 md:hidden",
+                    isMenuOpen
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none"
+                )}
+            >
+                <div className="flex flex-col space-y-8 text-xl">
+                    {navItems.map((item, key) => (
+                        <a
+                            key={key}
+                            href={item.href}
+                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {item.name}
+                        </a>
+                    ))}
+                </div>
             </div>
-        </nav>
+        </>
     );
 };
